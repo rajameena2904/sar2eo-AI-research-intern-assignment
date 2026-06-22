@@ -88,7 +88,7 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    model = Generator(in_channels=3).to(device)
+    model = Generator(in_channels=1).to(device)
     model.load_state_dict(torch.load(args.weights, map_location=device))
     model.eval()
 
@@ -108,7 +108,6 @@ def main():
             input_tensor = sar_img.astype(np.float32) / 255.0
             input_tensor = (input_tensor - 0.5) / 0.5
             input_tensor = torch.from_numpy(input_tensor).unsqueeze(0).unsqueeze(0).to(device)
-            input_tensor = input_tensor.repeat(1, 3, 1, 1)
 
             output_tensor = model(input_tensor)
 
