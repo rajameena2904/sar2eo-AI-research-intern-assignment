@@ -1,5 +1,0 @@
-Metric Category,Evaluation Metric,Baseline (L1 Only),Proposed Pipeline (L1 + cGAN)
-Perceptual (Primary Drivers),Learned Perceptual Image Patch Similarity (LPIPS),0.4189,0.2413
-Perceptual (Primary Drivers),Fréchet Inception Distance (FID),89.54,42.18
-Pixel-Level (Secondary Drivers),Structural Similarity Index (SSIM),0.142,0.0855
-Pixel-Level (Secondary Drivers),Peak Signal-to-Noise Ratio (PSNR),14.86 dB,11.43 dB
